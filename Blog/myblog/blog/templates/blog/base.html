@@ -1,0 +1,33 @@
+{% load static %}  <!-- Load static files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">  <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome To My Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'post_list' %}">Home</a></li>
+                <li><a href="{% url 'create_post' %}">Create Post</a></li>
+                <li><a href="{% url 'create_category' %}">Create Category</a></li>
+                <li><a href="{% url 'category_list' %}">View Categories</a></li>  <!-- Link to view categories -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MyBlog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

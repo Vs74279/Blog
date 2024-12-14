@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Create Category{% endblock %}
+
+{% block content %}
+<h2>Create a New Category</h2>
+<form action="{% url 'create_category' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Category</button>
+</form>
+{% endblock %}

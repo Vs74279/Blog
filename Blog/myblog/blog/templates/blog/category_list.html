@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Category List{% endblock %}
+
+{% block content %}
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.title }}</li>  <!-- Display the name of each category -->
+        {% empty %}
+            <li>No categories available.</li>  <!-- Message if no categories exist -->
+        {% endfor %}
+    </ul>
+{% endblock %}
